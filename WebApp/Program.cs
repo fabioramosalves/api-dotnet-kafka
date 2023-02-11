@@ -1,5 +1,9 @@
-var builder = WebApplication.CreateBuilder(args);
+using Microsoft.Extensions.Configuration;
+using WebApp.Configuration;
+using WebApp.Models.Passenger;
+using WebApp.Services.Kafka;
 
+var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -15,6 +19,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+builder.Services.Configure<KafkaSettings>(builder.Configuration.GetSection("Kafka"));
+if (bool.Parse(builder.Configuration.GetSection("Kafka:active").Value))
+{
+    builder.Services.AddTransient<IQueueService<Passenger>, KafkaService>();
+}
+
 
 app.UseHttpsRedirection();
 
