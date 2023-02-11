@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "charts", "charts", "{F90FCC32-8875-48B9-A6C5-1202A0318602}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{B30C3599-6500-4CA0-B467-3A103439AFC6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Itens", "Solution Itens", "{3A4920B0-FE0E-48BE-BC80-D36D82FAB7A0}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		Dockerfile = Dockerfile
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B30C3599-6500-4CA0-B467-3A103439AFC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B30C3599-6500-4CA0-B467-3A103439AFC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B30C3599-6500-4CA0-B467-3A103439AFC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B30C3599-6500-4CA0-B467-3A103439AFC6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ECA01E55-DD2F-4734-9D48-5D6A29D5257A}
+	EndGlobalSection
+EndGlobal
