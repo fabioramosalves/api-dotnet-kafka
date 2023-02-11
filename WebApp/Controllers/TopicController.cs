@@ -1,15 +1,20 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Serilog;
 using WebApp.Business;
 using WebApp.Models.Passenger;
 
 namespace WebApp.Controllers
 {
-
+    [ApiController]
+    [Route("[controller]")]
+    [Produces("application/json")]
     public class TopicController : Controller
     {
         private readonly IMessage _bll;
         public TopicController(IMessage @message) => _bll = @message;
+
+        [HttpPost("Passenger")]
         public async Task<IActionResult> PostPassenger(PassengerRequest request)
         {
             try
