@@ -25,7 +25,10 @@ namespace WebApp.Services.Kafka
                     Acks = Acks.All,
                     EnableDeliveryReports = true,
                     RetryBackoffMs = 1000,
-                    MessageSendMaxRetries = 3
+                    MessageSendMaxRetries = 3,
+                    SaslMechanism = SaslMechanism.Plain,
+                    SecurityProtocol = SecurityProtocol.SaslSsl
+                    
                 };
 
                 using var producer = new ProducerBuilder<long, string>(config).Build();
