@@ -2,6 +2,8 @@ using WebApp.Business;
 using WebApp.Configuration;
 using WebApp.Models.Passenger;
 using WebApp.Services.Kafka;
+using WebApp.Services.Kafka.Consumer;
+using WebApp.Services.Kafka.Producer;
 
 var currentEnv = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 if (string.IsNullOrEmpty(currentEnv))
@@ -28,6 +30,7 @@ builder.Services.AddTransient<IMessage, Message>();
 if (bool.Parse(builder.Configuration.GetSection("Kafka:active").Value))
 {
     builder.Services.AddTransient<IQueueService<Passenger>, KafkaService>();
+    builder.Services.AddTransient<IKafkaConsumer, KafkaConsumer>();
 }
 
 

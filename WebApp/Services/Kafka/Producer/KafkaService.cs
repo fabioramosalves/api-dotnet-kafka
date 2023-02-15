@@ -4,10 +4,12 @@ using Confluent.Kafka;
 using WebApp.Configuration;
 using Newtonsoft.Json;
 using Serilog;
+using WebApp.Services.Kafka.Producer;
+using WebApp.Models.Passenger;
 
 namespace WebApp.Services.Kafka
 {
-    public class KafkaService : IQueueService<Models.Passenger.Passenger>
+    public class KafkaService : IQueueService<Passenger>
     {
         private readonly KafkaSettings _kafkaSettings;
         public KafkaService(IOptions<KafkaSettings> kafkaSettings)
@@ -15,7 +17,7 @@ namespace WebApp.Services.Kafka
             _kafkaSettings = kafkaSettings.Value;
         }
 
-        public async void Produce(KafkaTopic topic, KafkaOperation kafkaOperation, Models.Passenger.Passenger message)
+        public async void Produce(KafkaTopic topic, KafkaOperation kafkaOperation, Passenger message)
         {
             try
             {
@@ -26,9 +28,10 @@ namespace WebApp.Services.Kafka
                     EnableDeliveryReports = true,
                     RetryBackoffMs = 1000,
                     MessageSendMaxRetries = 3,
+                    SaslUsername = _kafkaSettings.Username,
+                    SaslPassword = _kafkaSettings.Password,
                     SaslMechanism = SaslMechanism.Plain,
                     SecurityProtocol = SecurityProtocol.SaslSsl
-                    
                 };
 
                 using var producer = new ProducerBuilder<long, string>(config).Build();

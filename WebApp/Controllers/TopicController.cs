@@ -34,5 +34,26 @@ namespace WebApp.Controllers
                 throw;
             }
         }
+
+        [HttpGet("Passenger")]
+        public async Task<IActionResult> GetPassenger()
+        {
+            try
+            {
+                var result = await _bll.GetPassenger();
+
+                if (result == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(result);
+            }
+            catch (Exception e)
+            {
+                Log.Error(e, "Service Van: {Action}. Error: {MessageError}", nameof(GetPassenger), e.Message);
+                throw;
+            }
+        }
     }
 }
