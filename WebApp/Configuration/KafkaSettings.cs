@@ -9,7 +9,5 @@
         public int ConnectionAttempts { get; set; }
         public string? GroupId { get; set; }
         public bool EnableAutoCommit { get; set; }
-        public string UserNameClient { get; set; }
-        public string PasswordClient { get; set; }
     }
 }

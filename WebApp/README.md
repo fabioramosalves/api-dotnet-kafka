@@ -21,3 +21,7 @@ https://localhost:7014/Topic/Passenger
 
 
 --------------------------------------
+
+GET
+
+https://localhost:7014/Topic/Passenger
