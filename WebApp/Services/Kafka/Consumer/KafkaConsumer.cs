@@ -81,7 +81,7 @@ namespace WebApp.Services.Kafka.Consumer
 
                         if (consume.Message != null)
                         {
-                            var message = JsonSerializer.Deserialize<KafkaMessage>(consume.Message.Value);
+                            var message = JsonSerializer.Deserialize<FlightTrackingMessage>(consume.Message.Value);
                             if (message != null)
                             {
                                 result.Messages = result.Messages.Append(message);

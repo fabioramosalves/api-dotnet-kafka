@@ -8,20 +8,26 @@ https://confluent.cloud/environments/env-099735/clusters/lkc-r56rd9/topics/Passa
 
 POST
 
-https://localhost:7014/Topic/Passenger
+https://localhost:7014/Topic/FlightTracking
 
 {
-  "passenger": {
-    "id": 8,
-    "name": "Fabio Ramos Alves",
-    "email": "fabio.ramos.alves@teste.com",
-    "phoneNumber": "11953903260"
+  "flightTracking": {
+    "airlineCode":"DL",
+		"number":"2015",
+		"scheduledDepartureDate":"2023-01-25T17:14:00",
+		"departureAirportCode":"CUN",
+		"arrivalAirportCode":"DTW",
+		"departureTerminal":"3",
+		"arrivalTerminal":"M",
+		"status":"1",
+		"departureLocalTime":"2023-01-25T17:14:00-05:00",
+		"arrivalLocalTime":"2023-01-25T21:09:00-05:00",
+		"logicalKeyString":"DL|2015|20230125|CUN"
   }
 }
-
 
 --------------------------------------
 
 GET
 
-https://localhost:7014/Topic/Passenger
+https://localhost:7014/Topic/FlightTracking

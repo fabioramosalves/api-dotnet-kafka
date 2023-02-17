@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
 using WebApp.Business;
-using WebApp.Models.Passenger;
+using WebApp.Models.FlightTracking;
 
 namespace WebApp.Controllers
 {
@@ -14,12 +14,12 @@ namespace WebApp.Controllers
         private readonly IMessage _bll;
         public TopicController(IMessage @message) => _bll = @message;
 
-        [HttpPost("Passenger")]
-        public async Task<IActionResult> PostPassenger(PassengerRequest request)
+        [HttpPost("FlightTracking")]
+        public async Task<IActionResult> PostFlightTracking(FlightTrackingRequest request)
         {
             try
             {
-                var result = await _bll.SendPassenger(request);
+                var result = await _bll.SendFlightTracking(request);
 
                 if (result == null)
                 {
@@ -30,17 +30,17 @@ namespace WebApp.Controllers
             }
             catch (Exception e)
             {
-                Log.Error(e, "Service Van: {Action}. Error: {MessageError}", nameof(PostPassenger), e.Message);
+                Log.Error(e, "Service Van: {Action}. Error: {MessageError}", nameof(PostFlightTracking), e.Message);
                 throw;
             }
         }
 
-        [HttpGet("Passenger")]
+        [HttpGet("FlightTracking")]
         public async Task<IActionResult> GetPassenger()
         {
             try
             {
-                var result = await _bll.GetPassenger();
+                var result = await _bll.GetFlightTracking();
 
                 if (result == null)
                 {

@@ -5,11 +5,11 @@ using WebApp.Configuration;
 using Newtonsoft.Json;
 using Serilog;
 using WebApp.Services.Kafka.Producer;
-using WebApp.Models.Passenger;
+using WebApp.Models.FlightTracking;
 
 namespace WebApp.Services.Kafka
 {
-    public class KafkaService : IQueueService<Passenger>
+    public class KafkaService : IQueueService<FlightTracking>
     {
         private readonly KafkaSettings _kafkaSettings;
         public KafkaService(IOptions<KafkaSettings> kafkaSettings)
@@ -17,7 +17,7 @@ namespace WebApp.Services.Kafka
             _kafkaSettings = kafkaSettings.Value;
         }
 
-        public async void Produce(KafkaTopic topic, KafkaOperation kafkaOperation, Passenger message)
+        public async void Produce(KafkaTopic topic, KafkaOperation kafkaOperation, FlightTracking message)
         {
             try
             {

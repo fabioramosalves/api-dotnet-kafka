@@ -3,10 +3,10 @@
     using Messages;
     public class ConsumerResponse
     {
-        public IEnumerable<KafkaMessage> Messages { get; set; }
+        public IEnumerable<FlightTrackingMessage> Messages { get; set; }
         public ConsumerResponse()
         {
-            Messages = new List<KafkaMessage>();
+            Messages = new List<FlightTrackingMessage>();
         }
     }
 }

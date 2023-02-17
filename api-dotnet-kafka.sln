@@ -5,12 +5,13 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "charts", "charts", "{F90FCC32-8875-48B9-A6C5-1202A0318602}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{B30C3599-6500-4CA0-B467-3A103439AFC6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp", "WebApp\WebApp.csproj", "{B30C3599-6500-4CA0-B467-3A103439AFC6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Itens", "Solution Itens", "{3A4920B0-FE0E-48BE-BC80-D36D82FAB7A0}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 		Dockerfile = Dockerfile
+		nuget.config = nuget.config
 	EndProjectSection
 EndProject
 Global

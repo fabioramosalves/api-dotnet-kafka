@@ -1,6 +1,6 @@
 using WebApp.Business;
 using WebApp.Configuration;
-using WebApp.Models.Passenger;
+using WebApp.Models.FlightTracking;
 using WebApp.Services.Kafka;
 using WebApp.Services.Kafka.Consumer;
 using WebApp.Services.Kafka.Producer;
@@ -29,7 +29,7 @@ builder.Services.AddTransient<IMessage, Message>();
 
 if (bool.Parse(builder.Configuration.GetSection("Kafka:active").Value))
 {
-    builder.Services.AddTransient<IQueueService<Passenger>, KafkaService>();
+    builder.Services.AddTransient<IQueueService<FlightTracking>, KafkaService>();
     builder.Services.AddTransient<IKafkaConsumer, KafkaConsumer>();
 }
 
@@ -42,8 +42,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
-
 
 app.UseHttpsRedirection();
 
