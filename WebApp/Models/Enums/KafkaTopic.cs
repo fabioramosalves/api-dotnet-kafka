@@ -3,7 +3,11 @@
     using System.ComponentModel;
     public enum KafkaTopic
     {
-        [Description("PassangerTopic")]
-        PassangerTopic
+        [Description("UpdateFlightTracking")]
+        UpdateFlightTracking,
+        [Description("CreateFlightTracking")]
+        CreateFlightTracking,
+        [Description("FlightTracking")]
+        FlightTracking
     }
 }

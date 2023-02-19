@@ -24,7 +24,7 @@ namespace WebApp.Services.Kafka.Consumer
             ConsumerResponse result = new();
             var attempsConnection = _kafkaSettings.ConnectionAttempts;
             var cancellationToken = new CancellationTokenSource();
-            var topic = KafkaTopic.PassangerTopic.ToString();
+            var topic = KafkaTopic.UpdateFlightTracking.ToString();
 
             var config = new ConsumerConfig
             {
@@ -59,7 +59,7 @@ namespace WebApp.Services.Kafka.Consumer
                .Build();
 
            
-            consumer.Subscribe(new[] { topic });
+            consumer.Subscribe(_kafkaSettings.Topics.Split(","));
             _logger.LogInformation("{Consumer} suscribed to topics: {Topics}.", nameof(KafkaConsumer), topic);
 
 

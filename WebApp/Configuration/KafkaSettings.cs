@@ -9,5 +9,6 @@
         public int ConnectionAttempts { get; set; }
         public string? GroupId { get; set; }
         public bool EnableAutoCommit { get; set; }
+        public string Topics { get; set; }
     }
 }

@@ -31,3 +31,11 @@ https://localhost:7014/Topic/FlightTracking
 GET
 
 https://localhost:7014/Topic/FlightTracking
+
+
+
+
+
+-----------------Docker commands-------------------------
+docker build .
+docker run -d -p 7500:80 232e75db368f
