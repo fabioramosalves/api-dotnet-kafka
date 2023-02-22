@@ -4,6 +4,6 @@ namespace WebApp.Services.Kafka.Producer
 {
     public interface IQueueService<T> where T : class
     {
-        public void Produce(KafkaTopic topic, KafkaOperation kafkaOperation, T message);
+        public void Produce(string topic, KafkaOperation kafkaOperation, T message);
     }
 }

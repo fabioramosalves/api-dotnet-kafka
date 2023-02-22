@@ -17,7 +17,7 @@ namespace WebApp.Services.Kafka
             _kafkaSettings = kafkaSettings.Value;
         }
 
-        public async void Produce(KafkaTopic topic, KafkaOperation kafkaOperation, FlightTracking message)
+        public async void Produce(string topic, KafkaOperation kafkaOperation, FlightTracking message)
         {
             try
             {

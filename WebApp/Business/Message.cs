@@ -22,7 +22,7 @@ namespace WebApp.Business
 
             if (message != null)
             {
-                _kafkaProducerService.Produce(KafkaTopic.UpdateFlightTracking, KafkaOperation.CREATED, message);
+                _kafkaProducerService.Produce(KafkaTopic.FlightTrackingTopicUpdateFlight, KafkaOperation.CREATED, message);
             }
 
             var result = new FlightTrackingResponse() { HttpCode = 200, HttpMessage = "Success", Success = true };

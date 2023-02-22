@@ -24,7 +24,7 @@ namespace WebApp.Services.Kafka.Consumer
             ConsumerResponse result = new();
             var attempsConnection = _kafkaSettings.ConnectionAttempts;
             var cancellationToken = new CancellationTokenSource();
-            var topic = KafkaTopic.UpdateFlightTracking.ToString();
+            var topic = KafkaTopic.FlightTrackingTopicUpdateFlight;
 
             var config = new ConsumerConfig
             {

@@ -1,13 +1,10 @@
 ﻿namespace WebApp.Models.Enums
 {
-    using System.ComponentModel;
-    public enum KafkaTopic
+    public static class KafkaTopic
     {
-        [Description("UpdateFlightTracking")]
-        UpdateFlightTracking,
-        [Description("CreateFlightTracking")]
-        CreateFlightTracking,
-        [Description("FlightTracking")]
-        FlightTracking
+        public const string FlightTrackingTopicUpdateFlight = "FlightTracking-Topic-UpdateFlight";
+        public const string FlightTrackingTopicCreateFlight = "FlightTracking-Topic-CreateFlight";
+        public const string FlightTrackingTopicUpdateReservation = "FlightTracking-Topic-UpdateReservation";
+        public const string FlightTrackingTopicUpdateAirport = "FlightTracking-Topic-UpdateAirport";
     }
 }
